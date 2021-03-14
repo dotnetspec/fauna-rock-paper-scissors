@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build:fauna": "tsc --project tsconfig.fauna.json",
-    "fauna": "npm run build:fauna && fauna-gql",
-    "fauna:override": "npm run build:fauna && fauna-gql --override"
+    "fauna": "fauna-gql",
+    "fauna-override": "fauna-gql --override"
   },
   "dependencies": {
     "fauna-gql-upload": "^1.9.3",

@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "./.gen/fauna"
+    "outDir": "./fauna"
   },
-  "include": ["./fauna/**/*.ts"]
+  "include": [
+    "./fauna/**/*.ts"
+  ]
 }
