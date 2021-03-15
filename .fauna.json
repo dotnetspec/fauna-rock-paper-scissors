@@ -1,7 +1,7 @@
 {
   "envPath": ".env.local",
   "secretEnv": "FAUNA_ADMIN_SECRET_KEY",
-  "schemaPath": "fauna/schema.gql",
+  "schemaPath": "fauna/srschema.gql",
   "fnsDir": "fauna/functions",
   "rolesDir": "fauna/roles",
   "indexesDir": "fauna/indexes"
