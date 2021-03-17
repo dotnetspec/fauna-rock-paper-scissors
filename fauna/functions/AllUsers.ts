@@ -4,17 +4,18 @@ import { query } from "faunadb";
 const { Lambda, Let, Query, Var, Select, Map, Paginate, Match, Index, Get } = query;
 
 
-const AllRankings = {
-    name: "all_rankings",
+const AllUsers = {
+    //must match resolver name:
+    name: "all_users",
     body: Query(
         Lambda(
             [],
             Select(
                 "data",
-                Map(Paginate(Match(Index("allRankings"))), Lambda("x", Get(Var("x"))))
+                Map(Paginate(Match(Index("allUsers"))), Lambda("x", Get(Var("x"))))
             )
         )
     ),
 };
 
-export = AllRankings;
+export = AllUsers;

@@ -48,7 +48,7 @@ type Query {
   allUsers: [User] @resolver(name: "all_users")
   gotPlayersByRankingId (rankingid: String!): [Player] @resolver(name: "got_players_byrankingid")
   gotRankingIdsByPlayer (uid: String!): [String] @resolver(name: "got_rankings_byplayerid")
-  play(selection: Selection!): Result! @resolver(name: "play")
+  updateResult(selection: Selection!): Result! @resolver(name: "update_result")
 }
 
 type loginResult @embedded

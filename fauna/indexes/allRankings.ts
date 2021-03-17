@@ -3,11 +3,11 @@ const { Collection } = query;
 
 //this const name doesn't appear to matter, the index will be generated with name: whatever
 //label we use here:
-const AllPlayers = {
+const AllRankings = {
   //index name
-  name: "allPlayers",
-  source: Collection("Player"),
+  name: "allRankings",
+  source: Collection("Ranking"),
   unique: false,
 };
 
-export = AllPlayers;
+export = AllRankings;

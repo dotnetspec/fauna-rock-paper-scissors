@@ -1,6 +1,6 @@
 import { query } from "faunadb";
 import { RandomString, Switch } from "faunadb-fql-lib";
-import DetermineResult from '../lib/DetermineResult';
+import DetermineChallengeResult from '../lib/DetermineChallengeResult';
 const { Lambda, Let, Query, Var } = query;
 
 const selectionMap = {
@@ -9,8 +9,9 @@ const selectionMap = {
     S: "Scissors"
 };
 
-const Play = {
-    name: "play",
+const UpdateResult = {
+    //this matches the resolver name in the schema:
+    name: "update_result",
     body: Query(
         Lambda(
             ["selection"],
@@ -18,10 +19,10 @@ const Play = {
                 randomCharacter: RandomString(1, "RPS"),
                 opponentSelection: Switch(Var("randomCharacter"), selectionMap),
             },
-                DetermineResult(Var("selection"), Var("opponentSelection"))
+                DetermineChallengeResult(Var("selection"), Var("opponentSelection"))
             )
         )
     ),
 };
 
-export = Play;
+export = UpdateResult;

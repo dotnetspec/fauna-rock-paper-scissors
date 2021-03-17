@@ -1,7 +1,7 @@
 import { ExprArg, ExprVal, query } from "faunadb";
 const { And, Equals, If, Or } = query;
 
-export default function DetermineResult(selection: ExprArg, opponentSelection: ExprArg): ExprVal {
+export default function DetermineChallengeResult(selection: ExprArg, opponentSelection: ExprArg): ExprVal {
     return {
         selection,
         opponentSelection,
