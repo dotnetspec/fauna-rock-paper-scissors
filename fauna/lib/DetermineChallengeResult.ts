@@ -11,16 +11,16 @@ export default function DetermineChallengeResult(selection: ExprArg, opponentSel
             If(
                 Or(
                     And(
-                        Equals(selection, "Rock"),
-                        Equals(opponentSelection, "Scissors")
+                        Equals(selection, "Won"),
+                        Equals(opponentSelection, "Lost")
                     ),
                     And(
-                        Equals(selection, "Paper"),
-                        Equals(opponentSelection, "Rock")
+                        Equals(selection, "Abandoned"),
+                        Equals(opponentSelection, "Won")
                     ),
                     And(
-                        Equals(selection, "Scissors"),
-                        Equals(opponentSelection, "Paper")
+                        Equals(selection, "Lost"),
+                        Equals(opponentSelection, "Abandoned")
                     ),
                 ),
                 "You win!",

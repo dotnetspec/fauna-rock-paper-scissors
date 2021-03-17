@@ -32,9 +32,9 @@ type Mutation {
 }
 
 enum Selection {
-  Rock
-  Paper
-  Scissors
+  Won
+  Lost 
+  Abandoned
 }
 
 

@@ -3,10 +3,11 @@ import { RandomString, Switch } from "faunadb-fql-lib";
 import DetermineChallengeResult from '../lib/DetermineChallengeResult';
 const { Lambda, Let, Query, Var } = query;
 
+//this has to be updated in the schema as well:
 const selectionMap = {
-    R: "Rock",
-    P: "Paper",
-    S: "Scissors"
+    W: 'Won',
+    L: 'Lost',
+    A: 'Abandoned'
 };
 
 const UpdateResult = {
@@ -16,7 +17,7 @@ const UpdateResult = {
         Lambda(
             ["selection"],
             Let({
-                randomCharacter: RandomString(1, "RPS"),
+                randomCharacter: RandomString(1, "WLA"),
                 opponentSelection: Switch(Var("randomCharacter"), selectionMap),
             },
                 DetermineChallengeResult(Var("selection"), Var("opponentSelection"))
