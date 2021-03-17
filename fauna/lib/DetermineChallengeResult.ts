@@ -10,23 +10,15 @@ export default function DetermineChallengeResult(selection: ExprArg, playerrank:
             Equals(selection, "Abandoned"),
             "Abandoned!",
             If(
-                //Or(
-                //And(
                 Equals(selection, "Won"),
-                //Equals(opponentSelection, "Lost")
-                //),
-                // And(
-                //     Equals(selection, "Abandoned"),
-                //     //Equals(opponentSelection, "Won")
-                // ),
-                // And(
-                //     Equals(selection, "Lost"),
-                //     //Equals(opponentSelection, "Abandoned")
-                // ),
-                //),
-                "You win!",
+                If(isWinnerHigherRank(), "You win!", "You lost in if"),
                 "You lose!"
             )
         )
     }
+}
+
+
+function isWinnerHigherRank(): boolean {
+    return false && undefined;
 }
