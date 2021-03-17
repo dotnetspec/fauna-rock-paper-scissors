@@ -15,12 +15,12 @@ const UpdateResult = {
     name: "update_result",
     body: Query(
         Lambda(
-            ["selection"],
+            ["selection", "playerrank", "opponentrank"],
             Let({
-                randomCharacter: RandomString(1, "WLA"),
-                opponentSelection: Switch(Var("randomCharacter"), selectionMap),
+                //randomCharacter: RandomString(1, "WLA"),
+                //opponentSelection: Switch(Var("randomCharacter"), selectionMap),
             },
-                DetermineChallengeResult(Var("selection"), Var("opponentSelection"))
+                DetermineChallengeResult(Var("selection"), Var("playerrank"), Var("opponentrank"))
             )
         )
     ),
