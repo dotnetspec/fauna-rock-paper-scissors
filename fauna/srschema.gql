@@ -1,9 +1,9 @@
 type User {
   active: Boolean!
-  username: String!
+  username: String! @unique
   description: String
-  email: String
-  mobile: String
+  email: String @unique
+  mobile: String @unique
   ownerOf: [Ranking!]! @relation(name:"ownerranking")
   memberOf: [Player!]! @relation(name: "playerinranking")
 }
