@@ -27,3 +27,14 @@ const UpdateResult = {
 };
 
 export = UpdateResult;
+
+//PG:
+// query {
+//     updateResult(selection: Lost playerrank:1 opponentrank: 2) {
+//       selection
+//       playerrank
+//       opponentrank
+//       message
+//     }
+//   }
+

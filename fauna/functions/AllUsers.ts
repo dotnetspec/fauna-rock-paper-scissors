@@ -19,3 +19,6 @@ const AllUsers = {
 };
 
 export = AllUsers;
+
+//PlayGround:
+//query AllUsers{allUsers{_id}}

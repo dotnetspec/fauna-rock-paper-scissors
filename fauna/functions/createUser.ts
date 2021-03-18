@@ -39,3 +39,17 @@ const CreateNewUser = {
 };
 
 export = CreateNewUser;
+
+// PlayGround:
+// mutation CreateNewUser {
+//     createNewUser(
+//       active: true
+//       username: "Test 4"
+//       password: "hello"
+//       description: "Jogger"
+//       email: "4@4.com"
+//       mobile: "44444444"
+//     )
+//     {token
+//     logginUser{_id username description}}
+//   }

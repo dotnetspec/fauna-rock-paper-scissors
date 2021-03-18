@@ -18,3 +18,6 @@ const AllRankings = {
 };
 
 export = AllRankings;
+
+//PlayGround:
+//query AllRankings{allRankings{_id rankingname}}
