@@ -31,7 +31,7 @@ type Mutation {
   loginUser(username: String!, password: String!): loginResult! @resolver(name: "login_user")
 }
 
-enum Selection {
+enum ChallengeResult {
   Won
   Lost 
   Abandoned
@@ -48,7 +48,7 @@ type Query {
   allUsers: [User] @resolver(name: "all_users")
   gotPlayersByRankingId (rankingid: String!): [Player] @resolver(name: "got_players_byrankingid")
   gotRankingIdsByPlayer (uid: String!): [String] @resolver(name: "got_rankings_byplayerid")
-  updateResult(selection: Selection! playerrank: Int! opponentrank: Int!): Result! @resolver(name: "update_result")
+  updateResult(challengeresult: ChallengeResult! playerrank: Int! opponentrank: Int!): Result! @resolver(name: "update_result")
 }
 
 type loginResult @embedded
@@ -58,7 +58,7 @@ type loginResult @embedded
 }
 
 type Result @embedded {
-  selection: Selection!
+  challengeresult: ChallengeResult!
   playerrank: Int!
   opponentrank: Int!
   message: String!
