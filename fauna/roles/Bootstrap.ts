@@ -1,8 +1,8 @@
 import { query } from "faunadb";
-const { Collection, Index, Ref } = query;
+const { Collection, Index, Function } = query;
 
-const Login = {
-  name: "Bootstrap",
+const Bootstrap = {
+  name: "bootstrap",
   privileges: [
     {
       resource: Collection("User"),
@@ -17,13 +17,13 @@ const Login = {
       }
     },
     {
-      resource: Ref(Ref("functions"), "create_new_user"),
+      resource: Function("create_new_user"),
       actions: {
         call: true
       }
     },
     {
-      resource: Ref(Ref("functions"), "login_user"),
+      resource: Function("login_user"),
       actions: {
         call: true
       }
@@ -36,11 +36,8 @@ const Login = {
       }
     }
   ],
-  membership: [
-    {
-      resource: Collection("User")
-    }
-  ]
+  membership: []
 };
 
-export = Login;
+
+export = Bootstrap;
