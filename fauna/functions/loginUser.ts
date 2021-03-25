@@ -14,9 +14,10 @@ const LoginUser = {
                 {
                     match: Match(Index("unique_User_username"), Var("username")),
                     user: If(Exists(Var("match")), Get(Var("match")), "false"),
-                    login: Login(Select("ref", Var("user")), {
-                        password: Var("password")
-                    })
+                    login: Login(Select("ref", Var("user")),
+                        {
+                            password: Var("password")
+                        })
                 },
                 {
                     token: Select("secret", Var("login")),

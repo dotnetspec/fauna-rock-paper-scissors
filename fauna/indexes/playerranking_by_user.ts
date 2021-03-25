@@ -5,10 +5,15 @@ const { Collection } = query;
 //label we use here:
 const PlayerRankingByUser = {
   //index name
-  name: "player_ranking_by_user",
+  name: "playerranking_by_user",
   source: Collection("Player"),
   //unique has to be false cos it's not as straightforward as you might hope ...
   unique: false,
+  terms: [
+    {
+      field: ["data", "playerInfo"]
+    }
+  ]
 };
 
 export = PlayerRankingByUser;

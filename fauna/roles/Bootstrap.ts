@@ -27,13 +27,6 @@ const Bootstrap = {
       actions: {
         call: true
       }
-    },
-    {
-      resource: Index("unique_User_username"),
-      actions: {
-        unrestricted_read: false,
-        read: true
-      }
     }
   ],
   membership: []

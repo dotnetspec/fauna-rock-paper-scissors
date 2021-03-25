@@ -1,15 +1,22 @@
 import { Function, query } from "faunadb";
-const { Collection } = query;
+const { Collection, Index } = query;
+
+//all below can only happen once the Bearer has a token
+//i.e. after login
 
 const LoggedIn = {
     name: "logged-in",
     privileges: [
-        //list all the functions user needs to be logged-in to use:
         {
-            //user_find_by_id function is now tied to the user_find_by_id role:
-            resource: Function('user_find_by_id'),
+            resource: Index('ownerranking_by_user'),
             actions: {
-                call: true
+                read: true
+            }
+        },
+        {
+            resource: Index('playerranking_by_user'),
+            actions: {
+                read: true
             }
         }
     ],
