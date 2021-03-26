@@ -1,8 +1,8 @@
 import { Function, query } from "faunadb";
 const { Collection, Index } = query;
 
-const Player_ranking_by_user = {
-    name: "playerranking_by_user",
+const Playerinranking_by_user = {
+    name: "playerinranking_by_user",
     privileges: [
         {
             resource: Collection("User"),
@@ -11,8 +11,8 @@ const Player_ranking_by_user = {
             }
         },
         {
-            //player_ranking_by_user index is now tied to the player_ranking_by_user role:
-            resource: Index('playerranking_by_user'),
+            //playerinranking_by_user index is now tied to the playerinranking_by_user role:
+            resource: Index('playerinranking_by_user'),
             actions: {
                 read: true
             }
@@ -21,4 +21,4 @@ const Player_ranking_by_user = {
     membership: []
 };
 
-export = Player_ranking_by_user;
+export = Playerinranking_by_user;
