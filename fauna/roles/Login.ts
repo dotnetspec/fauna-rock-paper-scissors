@@ -21,3 +21,12 @@ const Login = {
 };
 
 export = Login;
+
+// mutation{
+//   loginUser(username: "Test1", password: "hello") {
+//     token
+//     logginUser {
+//       _id
+//     }
+//   }
+// }

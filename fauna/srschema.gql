@@ -29,6 +29,11 @@ type Mutation {
   createNewRanking(active: Boolean!, rankingname : String!, rankingdesc : String, rankingownerid : String!): Ranking! @resolver(name: "create_new_ranking")
   createNewUser(active: Boolean!, username : String!, password : String!, description: String, email: String, mobile: String): loginResult! @resolver(name: "create_new_user")
   loginUser(username: String!, password: String!): loginResult! @resolver(name: "login_user")
+  updateResult(challengeresult: ChallengeResult! playerrank: Int! opponentrank: Int!): Result! @resolver(name: "update_result")
+}
+
+type Query {
+  allPlayers: [Player]
 }
 
 enum ChallengeResult {
@@ -37,20 +42,6 @@ enum ChallengeResult {
   Abandoned
 }
 
-
-type Query {
-  allUserNames: [String!]! @resolver(name: "all_user_names")
-  allPlayerUIDs: [String!]! @resolver(name: "all_player_uids")
-  allPlayerRanks: [Int!]! @resolver(name: "all_player_ranks")
-  allPlayerChallengerUIDs: [String!]! @resolver(name: "all_player_challenger_uids")
-  allPlayers: [Player] @resolver(name: "all_players")
-  allRankings: [Ranking] @resolver(name: "all_rankings")
-  allUsers: [User] @resolver(name: "all_users")
-  gotPlayersByRankingId (rankingid: String!): [Player] @resolver(name: "got_players_byrankingid")
-  gotRankingIdsByPlayer (uid: String!): [String] @resolver(name: "got_rankings_byplayerid")
-  updateResult(challengeresult: ChallengeResult! playerrank: Int! opponentrank: Int!): Result! @resolver(name: "update_result")
- 
-}
 
 type loginResult @embedded
 {

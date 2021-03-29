@@ -71,3 +71,33 @@ const LoggedIn = {
 };
 
 export = LoggedIn;
+
+//PG:
+// export = FindUserByID;{
+//     findUserByID(id: "290125575057572353") {
+//       _id
+//       username
+//       description
+//       ownerOf {
+//         data {
+//           _id
+//           rankingname
+//           rankingdesc
+//         }
+//       }
+//       memberOf {
+//         data {
+//           _id
+//           active
+//           playerInfo {
+//             username
+//           }
+//           ladder {
+//             _id
+//             rankingname
+//             rankingdesc
+//           }
+//         }
+//       }
+//     }
+//   }

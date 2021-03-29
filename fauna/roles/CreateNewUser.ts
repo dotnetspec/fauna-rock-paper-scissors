@@ -23,3 +23,18 @@ const CreateNewUser = {
 
 
 export = CreateNewUser;
+
+// # Write your query or mutation here
+// mutation{
+//   createNewUser(
+//     active: true
+//     username: "Test4"
+//     password: "hello"
+//     description: "t4"
+//     email: "t4@t.com"
+//     mobile: "444444444"
+//   ) {
+//     token
+//     logginUser{username}
+//   }
+// }
