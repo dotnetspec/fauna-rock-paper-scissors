@@ -1,0 +1,21 @@
+# Write your query or mutation here
+{
+  findUserByID(id: "294007769929875981") {
+    _id
+    username
+    description
+    ownerOf {
+      data {
+        _id
+        rankingname
+        rankingdesc
+      }
+    }
+    memberOf {
+      data{
+        _id
+        ladder{_id rankingname rankingdesc}
+      }
+    }
+  }
+}

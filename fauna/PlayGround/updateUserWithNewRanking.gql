@@ -1,0 +1,25 @@
+mutation {
+  updateUser(
+    id: "294007769929875981"
+    data: {
+      active: true
+      username: "Test1"
+      ownerOf: {
+        create: [
+          {
+            active: true
+            rankingname: "newRanking2"
+            rankingdesc: "a new ranking"
+          }
+        ]
+      }
+    }
+  ) {
+    _id
+    ownerOf {
+      data {
+        rankingname
+      }
+    }
+  }
+}

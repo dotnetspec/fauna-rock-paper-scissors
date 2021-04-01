@@ -1,0 +1,13 @@
+mutation{
+  createNewUser(
+    active: true
+    username: "Test5"
+    password: "hello"
+    description: "t5"
+    email: "t5@t.com"
+    mobile: "5555555555"
+  ) {
+    token
+    logginUser{username}
+  }
+}

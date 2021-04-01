@@ -1,0 +1,8 @@
+mutation {
+  updateRanking(
+    id: "294666290562335233"
+    data: { active: true, rankingname: "changedName" }
+  ) {
+    _id
+  }
+}
