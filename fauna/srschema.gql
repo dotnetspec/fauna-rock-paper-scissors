@@ -13,7 +13,7 @@ type Player {
   rank: Int!
   ladder: Ranking!  @relation # add the relation Directive
   playerInfo: User! @relation(name: "playerinranking")
-  challenger: Player @relation (name: "playerchallenger")
+  challenger: Challenger @relation (name: "playerchallenger")
 }
 
 type Challenger {
