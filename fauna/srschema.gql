@@ -16,6 +16,13 @@ type Player {
   challenger: Player @relation (name: "playerchallenger")
 }
 
+type Challenger {
+  active: Boolean!
+  rank: Int!
+  ladder: Ranking!  @relation
+  playerInfo: User! @relation(name: "playerinranking")
+}
+
 type Ranking {
   active: Boolean!
   rankingname: String!
